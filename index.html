@@ -129,26 +129,58 @@
         /* Portfolio Section */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .portfolio-item {
-            background-color: #111;
-            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
             border: 3px solid #8b0000;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #666;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .portfolio-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .instagram-link {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .instagram-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b0000, #aa0000);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .instagram-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
         }
         
         /* Services Section */
@@ -344,29 +376,17 @@
             </h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <span data-lang="en">Portrait Artwork</span>
-                    <span data-lang="es">Retrato Artístico</span>
+                    <img src="img/portfolio_1.jpg" alt="Black & Grey Realism Tattoo">
                 </div>
                 <div class="portfolio-item">
-                    <span data-lang="en">Religious Imagery</span>
-                    <span data-lang="es">Imágenes Religiosas</span>
+                    <img src="img/portfolio_2.jpg" alt="Portrait Tattoo Art">
                 </div>
-                <div class="portfolio-item">
-                    <span data-lang="en">Chicano Style</span>
-                    <span data-lang="es">Estilo Chicano</span>
-                </div>
-                <div class="portfolio-item">
-                    <span data-lang="en">San Judas</span>
-                    <span data-lang="es">San Judas</span>
-                </div>
-                <div class="portfolio-item">
-                    <span data-lang="en">Realism Details</span>
-                    <span data-lang="es">Detalles Realistas</span>
-                </div>
-                <div class="portfolio-item">
-                    <span data-lang="en">Custom Design</span>
-                    <span data-lang="es">Diseño Personalizado</span>
-                </div>
+            </div>
+            <div class="instagram-link">
+                <a href="https://instagram.com/guccierrezz" target="_blank" class="instagram-cta">
+                    <span data-lang="en">More work on Instagram</span>
+                    <span data-lang="es">Más trabajo en Instagram</span>
+                </a>
             </div>
         </div>
     </section>
