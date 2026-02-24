@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Gutiérrez - Black & Grey Realism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b0000;
+        }
+        
+        .lang-toggle {
+            background-color: transparent;
+            border: 2px solid #8b0000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-toggle:hover {
+            background-color: #8b0000;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #8b0000;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .hero .location {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8b0000;
+            font-weight: bold;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #111;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            background-color: #111;
+            height: 300px;
+            border: 3px solid #8b0000;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #111;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0a0a0a;
+            border-radius: 10px;
+            border: 2px solid #8b0000;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-item h3 {
+            font-size: 1.5rem;
+            color: #8b0000;
+            margin-bottom: 1rem;
+        }
+        
+        /* Booking Section */
+        .booking {
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #8b0000;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .cta-button:hover {
+            background-color: #aa0000;
+        }
+        
+        .instagram-info {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+        }
+        
+        .footer-credit {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .footer-credit a {
+            color: #8b0000;
+            text-decoration: none;
+        }
+        
+        /* Language Toggle */
+        [data-lang="es"] {
+            display: none;
+        }
+        
+        .lang-es [data-lang="en"] {
+            display: none;
+        }
+        
+        .lang-es [data-lang="es"] {
+            display: inline;
+        }
+        
+        .lang-es [data-lang="es"].block {
+            display: block;
+        }
+        
+        [data-lang="en"].block {
+            display: block;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero .location {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AG</div>
+            <button class="lang-toggle" onclick="toggleLanguage()">
+                <span data-lang="en">ES</span>
+                <span data-lang="es">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>ALAN GUTIÉRREZ</h1>
+            <div class="subtitle">
+                <span data-lang="en">Black & Grey Realism</span>
+                <span data-lang="es">Realismo en Negro y Gris</span>
+            </div>
+            <div class="location">
+                <span data-lang="en">CDMX • International Bookings</span>
+                <span data-lang="es">CDMX • Reservas Internacionales</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang="en">About</span>
+                <span data-lang="es">Acerca de</span>
+            </h2>
+            <div class="about-content">
+                <p data-lang="en" class="block">
+                    I am a specialist in black and grey realism, based in Mexico City with availability for international guest spots. My passion lies in creating stunning portraits and religious imagery, drawing inspiration from Chicano culture and traditions. Each piece is crafted with precision and dedication to bring your vision to life.
+                </p>
+                <p data-lang="es" class="block">
+                    Soy especialista en realismo en negro y gris, basado en la Ciudad de México con disponibilidad para guest spots internacionales. Mi pasión se encuentra en crear retratos impresionantes e imágenes religiosas, inspirándome en la cultura y tradiciones chicanas. Cada pieza está elaborada con precisión y dedicación para dar vida a tu visión.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang="en">Portfolio</span>
+                <span data-lang="es">Portafolio</span>
+            </h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <span data-lang="en">Portrait Artwork</span>
+                    <span data-lang="es">Retrato Artístico</span>
+                </div>
+                <div class="portfolio-item">
+                    <span data-lang="en">Religious Imagery</span>
+                    <span data-lang="es">Imágenes Religiosas</span>
+                </div>
+                <div class="portfolio-item">
+                    <span data-lang="en">Chicano Style</span>
+                    <span data-lang="es">Estilo Chicano</span>
+                </div>
+                <div class="portfolio-item">
+                    <span data-lang="en">San Judas</span>
+                    <span data-lang="es">San Judas</span>
+                </div>
+                <div class="portfolio-item">
+                    <span data-lang="en">Realism Details</span>
+                    <span data-lang="es">Detalles Realistas</span>
+                </div>
+                <div class="portfolio-item">
+                    <span data-lang="en">Custom Design</span>
+                    <span data-lang="es">Diseño Personalizado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang="en">Services</span>
+                <span data-lang="es">Servicios</span>
+            </h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>
+                        <span data-lang="en">Portraits</span>
+                        <span data-lang="es">Retratos</span>
+                    </h3>
+                    <p data-lang="en">Realistic portrait tattoos with incredible detail and precision</p>
+                    <p data-lang="es">Tatuajes de retratos realistas con increíble detalle y precisión</p>
+                </div>
+                <div class="service-item">
+                    <h3>
+                        <span data-lang="en">Religious/Chicano</span>
+                        <span data-lang="es">Religioso/Chicano</span>
+                    </h3>
+                    <p data-lang="en">Sacred imagery and Chicano-inspired cultural pieces</p>
+                    <p data-lang="es">Imágenes sagradas y piezas culturales de inspiración chicana</p>
+                </div>
+                <div class="service-item">
+                    <h3>
+                        <span data-lang="en">Realism</span>
+                        <span data-lang="es">Realismo</span>
+                    </h3>
+                    <p data-lang="en">Black and grey realistic tattoos that look like photographs</p>
+                    <p data-lang="es">Tatuajes realistas en negro y gris que parecen fotografías</p>
+                </div>
+                <div class="service-item">
+                    <h3>
+                        <span data-lang="en">Custom Design</span>
+                        <span data-lang="es">Diseño Personalizado</span>
+                    </h3>
+                    <p data-lang="en">Unique, personalized designs created just for you</p>
+                    <p data-lang="es">Diseños únicos y personalizados creados solo para ti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang="en">Book Your Session</span>
+                <span data-lang="es">Reserva tu Sesión</span>
+            </h2>
+            <p data-lang="en" class="block">
+                Ready to get your next tattoo? Contact me through Instagram to discuss your idea and schedule your appointment.
+            </p>
+            <p data-lang="es" class="block">
+                ¿Listo para tu próximo tatuaje? Contáctame a través de Instagram para discutir tu idea y programar tu cita.
+            </p>
+            
+            <a href="https://instagram.com/guccierrezz" target="_blank" class="cta-button">
+                <span data-lang="en">Book via Instagram</span>
+                <span data-lang="es">Reservar vía Instagram</span>
+            </a>
+            
+            <div class="instagram-info">
+                <span data-lang="en">@guccierrezz • 11.2K followers</span>
+                <span data-lang="es">@guccierrezz • 11.2K seguidores</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Alan Gutiérrez. 
+                <span data-lang="en">All rights reserved.</span>
+                <span data-lang="es">Todos los derechos reservados.</span>
+            </p>
+            <p class="footer-credit">
+                <span data-lang="en">Website by</span>
+                <span data-lang="es">Sitio web por</span>
+                <a href="#" target="_blank">Bayou Web Studios</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const isSpanish = body.classList.contains('lang-es');
+            
+            if (isSpanish) {
+                body.classList.remove('lang-es');
+                body.classList.add('lang-en');
+                document.documentElement.lang = 'en';
+            } else {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-es');
+                document.documentElement.lang = 'es';
+            }
+        }
+
+        // Initialize with English
+        document.body.classList.add('lang-en');
+    </script>
+</body>
+</html>
