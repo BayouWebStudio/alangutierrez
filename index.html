@@ -1,545 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alan Gutiérrez - Black & Grey Realism Tattoo Artist | Mexico City</title>
-    <meta name="description" content="Alan Gutiérrez (@guccierrezz) — Specialist in black & grey realism tattoos based in Mexico City. Portraits, religious imagery & Chicano-inspired art. International bookings available.">
-    <meta name="keywords" content="tattoo artist, black grey realism, Mexico City, portrait tattoos, chicano art, guccierrezz, Alan Gutierrez">
-    <link rel="canonical" href="https://guccierrezz.com/">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Alan Gutiérrez - Black & Grey Realism Tattoo Artist">
-    <meta property="og:description" content="Specialist in black & grey realism tattoos based in Mexico City. Portraits, religious imagery & Chicano-inspired art.">
-    <meta property="og:image" content="https://guccierrezz.com/img/portfolio_1.jpg">
-    <meta property="og:url" content="https://guccierrezz.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="es_MX">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alan Gutiérrez - Black & Grey Realism Tattoo Artist">
-    <meta name="twitter:description" content="Specialist in black & grey realism tattoos based in Mexico City. International bookings available.">
-    <meta name="twitter:image" content="https://guccierrezz.com/img/portfolio_1.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TattooParlor",
-      "name": "Alan Gutiérrez Tattoo Artist",
-      "alternateName": "guccierrezz",
-      "description": "Specialist in black and grey realism tattoos based in Mexico City",
-      "image": "https://guccierrezz.com/img/portfolio_1.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mexico City",
-        "addressCountry": "MX"
-      },
-      "url": "https://guccierrezz.com",
-      "sameAs": [
-        "https://instagram.com/guccierrezz"
-      ],
-      "areaServed": ["Mexico City", "International"],
-      "knowsAbout": ["Black and Grey Realism", "Portrait Tattoos", "Religious Imagery", "Chicano Art"]
-    }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #0a0a0a;
-            color: white;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #8b0000;
-        }
-        
-        .lang-toggle {
-            background-color: transparent;
-            border: 2px solid #8b0000;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-toggle:hover {
-            background-color: #8b0000;
-            color: white;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: #8b0000;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .hero .location {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 2rem;
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #8b0000;
-            font-weight: bold;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: #111;
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .portfolio-item {
-            border-radius: 15px;
-            overflow: hidden;
-            border: 3px solid #8b0000;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .instagram-link {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .instagram-cta {
-            display: inline-block;
-            background: linear-gradient(45deg, #8b0000, #aa0000);
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .instagram-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: #111;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .service-item {
-            text-align: center;
-            padding: 2rem;
-            background-color: #0a0a0a;
-            border-radius: 10px;
-            border: 2px solid #8b0000;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-item h3 {
-            font-size: 1.5rem;
-            color: #8b0000;
-            margin-bottom: 1rem;
-        }
-        
-        /* Booking Section */
-        .booking {
-            text-align: center;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #8b0000;
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-top: 2rem;
-        }
-        
-        .cta-button:hover {
-            background-color: #aa0000;
-        }
-        
-        .instagram-info {
-            margin-top: 1rem;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #111;
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid #333;
-        }
-        
-        .footer-credit {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .footer-credit a {
-            color: #8b0000;
-            text-decoration: none;
-        }
-        
-        /* Language Toggle */
-        [data-lang="es"] {
-            display: none;
-        }
-        
-        .lang-es [data-lang="en"] {
-            display: none;
-        }
-        
-        .lang-es [data-lang="es"] {
-            display: inline;
-        }
-        
-        .lang-es [data-lang="es"].block {
-            display: block;
-        }
-        
-        [data-lang="en"].block {
-            display: block;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .hero .location {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            section {
-                padding: 3rem 0;
-            }
-            
-            .nav-container {
-                padding: 0 15px;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-        }
-    </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="PLACEHOLDER_ALAN"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan Gutiérrez | Black &amp; Grey Realism | CDMX México</title>
+  <meta name="description" content="Alan Gutiérrez — Artista de tatuaje especializado en Black &amp; Grey Realism, estilo Chicano, retratos. CDMX, México. Guest spots internacionales.">
+  <meta name="keywords" content="tatuaje black grey realism CDMX, chicano tattoo Mexico, Alan Gutierrez tattoo, retratos tattoo">
+  <meta property="og:title" content="Alan Gutiérrez | Black &amp; Grey Realism | CDMX México">
+  <meta property="og:description" content="Black &amp; Grey Realism · Chicano · Retratos · CDMX · Guest Spots Internacionales">
+  <meta property="og:image" content="https://guccierrezz.com/img/photo_01.jpg">
+  <meta property="og:url" content="https://guccierrezz.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0a;--text:#f0f0f0;--muted:#999;--accent:#8b0000;--al:#b50000;--border:rgba(139,0,0,0.3);--card:#111}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.1em;color:var(--text);text-decoration:none}
+    .nav-links{display:flex;align-items:center;gap:2rem}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s}
+    .nav-links a:hover{color:var(--text)}
+    .lang-toggle{background:var(--border);border:1px solid var(--accent);color:var(--text);padding:.35rem .9rem;border-radius:2px;cursor:pointer;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transition:background .3s;font-family:'Montserrat',sans-serif}
+    .lang-toggle:hover{background:var(--accent)}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(139,0,0,.12) 0%,transparent 70%);pointer-events:none}
+    .hero-content{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .hero-eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--al);margin-bottom:1rem}
+    .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;margin-bottom:1rem}
+    .hero-name span{color:var(--al);font-style:italic}
+    .hero-subtitle{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+    .hero-location{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--al);margin-bottom:2.5rem}
+    .hero-cta{display:inline-block;background:var(--accent);color:var(--text);text-decoration:none;padding:1rem 2.5rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,transform .2s}
+    .hero-cta:hover{background:var(--al);transform:translateY(-2px)}
+    .hero-image{display:flex;justify-content:center}
+    .hero-image img{width:320px;height:320px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 60px rgba(139,0,0,.3)}
+    .hero-placeholder{width:320px;height:320px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#2a0000);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--accent)}
+    section{padding:6rem 2rem}
+    .inner{max-width:1100px;margin:0 auto}
+    .s-label{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--al);margin-bottom:1rem}
+    .s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;margin-bottom:2.5rem;line-height:1.1}
+    .divider{width:60px;height:1px;background:var(--accent);margin-bottom:2.5rem}
+    .about{background:var(--card)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    .about-text p{color:var(--muted);margin-bottom:1.2rem;font-size:.95rem}
+    .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .stat{border:1px solid var(--border);padding:1.5rem;text-align:center}
+    .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--al);line-height:1;margin-bottom:.3rem}
+    .stat-l{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+    .gallery-grid{columns:3;column-gap:12px}
+    .g-item{break-inside:avoid;margin-bottom:12px;overflow:hidden;cursor:pointer;position:relative}
+    .g-item img{width:100%;display:block;transition:transform .4s ease}
+    .g-item:hover img{transform:scale(1.03)}
+    .g-item::after{content:'';position:absolute;inset:0;background:rgba(139,0,0,0);transition:background .3s;pointer-events:none}
+    .g-item:hover::after{background:rgba(139,0,0,.15)}
+    .book-cta{background:linear-gradient(135deg,#0f0000,var(--bg));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+    .book-cta p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem;max-width:500px;margin-left:auto;margin-right:auto}
+    .book-btn{display:inline-block;background:var(--accent);color:var(--text);text-decoration:none;padding:1.2rem 3.5rem;font-size:.82rem;letter-spacing:.25em;text-transform:uppercase;transition:background .3s,transform .2s}
+    .book-btn:hover{background:var(--al);transform:translateY(-2px)}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .c-item{border:1px solid var(--border);padding:2rem;text-align:center}
+    .c-item .icon{font-size:1.8rem;margin-bottom:.8rem}
+    .c-item h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .c-item a,.c-item p{color:var(--text);text-decoration:none;font-size:.9rem}
+    .c-item a:hover{color:var(--al)}
+    .float-btn{position:fixed;bottom:2rem;right:2rem;z-index:200;background:var(--accent);color:var(--text);text-decoration:none;padding:.9rem 1.8rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;box-shadow:0 4px 20px rgba(139,0,0,.5);transition:background .3s,transform .2s,box-shadow .3s}
+    .float-btn:hover{background:var(--al);transform:translateY(-3px);box-shadow:0 6px 30px rgba(139,0,0,.6)}
+    footer{background:#050505;border-top:1px solid var(--border);padding:2rem;text-align:center}
+    footer p{color:#555;font-size:.75rem;letter-spacing:.1em}
+    footer a{color:var(--al);text-decoration:none}
+    footer a:hover{color:var(--text)}
+    .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.95);align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lb-img{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 0 60px rgba(139,0,0,.3)}
+    .lb-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:var(--muted);cursor:pointer;line-height:1;transition:color .2s;background:none;border:none;color:#999}
+    .lb-close:hover{color:var(--text)}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:2rem;color:#999;cursor:pointer;padding:1rem;background:none;border:none;transition:color .2s}
+    .lb-nav:hover{color:var(--text)}
+    .lb-prev{left:1rem}
+    .lb-next{right:1rem}
+    @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links a{display:none}.hero-content{grid-template-columns:1fr;gap:3rem;text-align:center}.hero-image{order:-1}.hero-image img,.hero-placeholder{width:220px;height:220px}.about-grid{grid-template-columns:1fr;gap:2.5rem}.gallery-grid{columns:2}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:480px){.gallery-grid{columns:1}}
+    .lang-es .en{display:none}
+    .lang-en .es{display:none}
+  </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">AG</div>
-            <button class="lang-toggle" onclick="toggleLanguage()">
-                <span data-lang="en">ES</span>
-                <span data-lang="es">EN</span>
-            </button>
-        </div>
-    </nav>
+<body class="lang-es">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>ALAN GUTIÉRREZ</h1>
-            <div class="subtitle">
-                <span data-lang="en">Black & Grey Realism</span>
-                <span data-lang="es">Realismo en Negro y Gris</span>
-            </div>
-            <div class="location">
-                <span data-lang="en">CDMX • International Bookings</span>
-                <span data-lang="es">CDMX • Reservas Internacionales</span>
-            </div>
-        </div>
-    </section>
+<nav>
+  <a href="#" class="nav-logo">AG</a>
+  <div class="nav-links">
+    <a href="#about"><span class="es">Sobre Mí</span><span class="en">About</span></a>
+    <a href="#gallery"><span class="es">Galería</span><span class="en">Gallery</span></a>
+    <a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    <button class="lang-toggle" onclick="toggleLang()">EN / ES</button>
+  </div>
+</nav>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-lang="en">About</span>
-                <span data-lang="es">Acerca de</span>
-            </h2>
-            <div class="about-content">
-                <p data-lang="en" class="block">
-                    I am a specialist in black and grey realism, based in Mexico City with availability for international guest spots. My passion lies in creating stunning portraits and religious imagery, drawing inspiration from Chicano culture and traditions. Each piece is crafted with precision and dedication to bring your vision to life.
-                </p>
-                <p data-lang="es" class="block">
-                    Soy especialista en realismo en negro y gris, basado en la Ciudad de México con disponibilidad para guest spots internacionales. Mi pasión se encuentra en crear retratos impresionantes e imágenes religiosas, inspirándome en la cultura y tradiciones chicanas. Cada pieza está elaborada con precisión y dedicación para dar vida a tu visión.
-                </p>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow"><span class="es">Artista de Tatuaje · CDMX</span><span class="en">Tattoo Artist · Mexico City</span></p>
+      <h1 class="hero-name">Alan <span>Gutiérrez</span></h1>
+      <p class="hero-subtitle">Black &amp; Grey Realism</p>
+      <p class="hero-location">CDMX · International Guest Spots</p>
+      <a href="https://www.instagram.com/guccierrezz/" target="_blank" class="hero-cta">
+        <span class="es">Agenda tu Cita</span><span class="en">Book Your Session</span>
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="img/photo_01.jpg" alt="Alan Gutiérrez - Black & Grey Realism Tattoo Artist" onerror="this.style.display='none';document.querySelector('.hero-placeholder').style.display='flex'">
+      <div class="hero-placeholder" style="display:none">AG</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-lang="en">Portfolio</span>
-                <span data-lang="es">Portafolio</span>
-            </h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="img/portfolio_1.jpg" alt="Black & Grey Realism Tattoo">
-                </div>
-                <div class="portfolio-item">
-                    <img src="img/portfolio_2.jpg" alt="Portrait Tattoo Art">
-                </div>
-            </div>
-            <div class="instagram-link">
-                <a href="https://instagram.com/guccierrezz" target="_blank" class="instagram-cta">
-                    <span data-lang="en">More work on Instagram</span>
-                    <span data-lang="es">Más trabajo en Instagram</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="about" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="s-label"><span class="es">Sobre el Artista</span><span class="en">About the Artist</span></p>
+        <h2 class="s-title"><span class="es">Arte que <em>trasciende</em> la piel</span><span class="en">Art that <em>transcends</em> the skin</span></h2>
+        <div class="divider"></div>
+        <p class="es">Alan Rodrigo Sánchez Gutiérrez es un artista de tatuaje con base en Ciudad de México, especializado en Black &amp; Grey Realism, estilo Chicano, retratos y arte religioso. Cada línea que traza es un homenaje a la cultura y a la identidad.</p>
+        <p class="en">Alan Rodrigo Sánchez Gutiérrez is a Mexico City–based tattoo artist specializing in Black &amp; Grey Realism, Chicano style, portraiture and religious imagery. Every line he draws is a tribute to culture and identity.</p>
+        <p class="es">Con influencias profundas en el muralismo mexicano y la iconografía chicana, Alan ha desarrollado una voz visual única que resonó más allá de las fronteras — llevándolo a guest spots en estudios internacionales a lo largo de América y Europa.</p>
+        <p class="en">Drawing deep from Mexican muralism and Chicano iconography, Alan has developed a unique visual voice that resonates beyond borders — earning him guest spots at international studios across the Americas and Europe.</p>
+        <p class="es">Su agenda está abierta para citas en CDMX y guest spots internacionales. Contáctalo por Instagram para comenzar tu proyecto.</p>
+        <p class="en">His calendar is open for CDMX appointments and international guest spots. Reach out via Instagram to start your project.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><div class="stat-n">12+</div><div class="stat-l es">Años de Experiencia</div><div class="stat-l en">Years Experience</div></div>
+        <div class="stat"><div class="stat-n">11K+</div><div class="stat-l es">Seguidores</div><div class="stat-l en">Followers</div></div>
+        <div class="stat"><div class="stat-n">B&amp;G</div><div class="stat-l es">Especialidad</div><div class="stat-l en">Specialty</div></div>
+        <div class="stat"><div class="stat-n">🌎</div><div class="stat-l es">Guest Spots Int'l</div><div class="stat-l en">Int'l Guest Spots</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-lang="en">Services</span>
-                <span data-lang="es">Servicios</span>
-            </h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>
-                        <span data-lang="en">Portraits</span>
-                        <span data-lang="es">Retratos</span>
-                    </h3>
-                    <p data-lang="en">Realistic portrait tattoos with incredible detail and precision</p>
-                    <p data-lang="es">Tatuajes de retratos realistas con increíble detalle y precisión</p>
-                </div>
-                <div class="service-item">
-                    <h3>
-                        <span data-lang="en">Religious/Chicano</span>
-                        <span data-lang="es">Religioso/Chicano</span>
-                    </h3>
-                    <p data-lang="en">Sacred imagery and Chicano-inspired cultural pieces</p>
-                    <p data-lang="es">Imágenes sagradas y piezas culturales de inspiración chicana</p>
-                </div>
-                <div class="service-item">
-                    <h3>
-                        <span data-lang="en">Realism</span>
-                        <span data-lang="es">Realismo</span>
-                    </h3>
-                    <p data-lang="en">Black and grey realistic tattoos that look like photographs</p>
-                    <p data-lang="es">Tatuajes realistas en negro y gris que parecen fotografías</p>
-                </div>
-                <div class="service-item">
-                    <h3>
-                        <span data-lang="en">Custom Design</span>
-                        <span data-lang="es">Diseño Personalizado</span>
-                    </h3>
-                    <p data-lang="en">Unique, personalized designs created just for you</p>
-                    <p data-lang="es">Diseños únicos y personalizados creados solo para ti</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="gallery">
+  <div class="inner">
+    <p class="s-label"><span class="es">Portafolio</span><span class="en">Portfolio</span></p>
+    <h2 class="s-title"><span class="es">Trabajo Reciente</span><span class="en">Recent Work</span></h2>
+    <div class="divider"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
 
-    <!-- Booking Section -->
-    <section class="booking">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-lang="en">Book Your Session</span>
-                <span data-lang="es">Reserva tu Sesión</span>
-            </h2>
-            <p data-lang="en" class="block">
-                Ready to get your next tattoo? Contact me through Instagram to discuss your idea and schedule your appointment.
-            </p>
-            <p data-lang="es" class="block">
-                ¿Listo para tu próximo tatuaje? Contáctame a través de Instagram para discutir tu idea y programar tu cita.
-            </p>
-            
-            <a href="https://instagram.com/guccierrezz" target="_blank" class="cta-button">
-                <span data-lang="en">Book via Instagram</span>
-                <span data-lang="es">Reservar vía Instagram</span>
-            </a>
-            
-            <div class="instagram-info">
-                <span data-lang="en">@guccierrezz • 11.2K followers</span>
-                <span data-lang="es">@guccierrezz • 11.2K seguidores</span>
-            </div>
-        </div>
-    </section>
+<section class="book-cta">
+  <div class="inner">
+    <p class="s-label"><span class="es">Citas Disponibles</span><span class="en">Now Booking</span></p>
+    <h2 class="s-title"><span class="es">¿Listo para tu próximo tatuaje?</span><span class="en">Ready for your next tattoo?</span></h2>
+    <p class="es">Agenda disponible para CDMX y guest spots internacionales. Manda tu idea por DM.</p>
+    <p class="en">Bookings open for CDMX and international guest spots. Send your idea via DM.</p>
+    <a href="https://www.instagram.com/guccierrezz/" target="_blank" class="book-btn">
+      <span class="es">Agenda tu Cita →</span><span class="en">Book Your Session →</span>
+    </a>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Alan Gutiérrez. 
-                <span data-lang="en">All rights reserved.</span>
-                <span data-lang="es">Todos los derechos reservados.</span>
-            </p>
-            <p class="footer-credit">
-                <span data-lang="en">Website by</span>
-                <span data-lang="es">Sitio web por</span>
-                <a href="https://bayouwebstudio.com" target="_blank">Bayou Web Studios</a>
-            </p>
-        </div>
-    </footer>
+<section id="contact">
+  <div class="inner">
+    <p class="s-label"><span class="es">Contacto</span><span class="en">Contact</span></p>
+    <h2 class="s-title"><span class="es">Encuéntrame</span><span class="en">Find Me</span></h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="c-item"><div class="icon">📍</div><h3><span class="es">Ubicación</span><span class="en">Location</span></h3><p>Ciudad de México, México</p></div>
+      <div class="c-item"><div class="icon">📸</div><h3>Instagram</h3><a href="https://www.instagram.com/guccierrezz/" target="_blank">@guccierrezz</a></div>
+      <div class="c-item"><div class="icon">📅</div><h3><span class="es">Citas</span><span class="en">Bookings</span></h3><p class="es">Por DM en Instagram</p><p class="en">Via Instagram DM</p></div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        function toggleLanguage() {
-            const body = document.body;
-            const isSpanish = body.classList.contains('lang-es');
-            
-            if (isSpanish) {
-                body.classList.remove('lang-es');
-                body.classList.add('lang-en');
-                document.documentElement.lang = 'en';
-            } else {
-                body.classList.remove('lang-en');
-                body.classList.add('lang-es');
-                document.documentElement.lang = 'es';
-            }
-        }
+<a href="https://www.instagram.com/guccierrezz/" target="_blank" class="float-btn">
+  <span class="es">Agendar</span><span class="en">Book Now</span>
+</a>
 
-        // Initialize with English
-        document.body.classList.add('lang-en');
-    </script>
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLB()">×</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<footer>
+  <p>© 2025 Alan Gutiérrez · @guccierrezz · CDMX, México<br>
+  <span style="margin-top:.5rem;display:inline-block"><span class="es">Sitio web por</span><span class="en">Website by</span> <a href="https://bayouwebstudio.com" target="_blank">Bayou Web Studio</a></span></p>
+</footer>
+
+<script>
+const imgs=['img/photo_01.jpg','img/photo_02.jpg','img/photo_03.jpg','img/photo_04.jpg','img/photo_05.jpg','img/photo_06.jpg','img/photo_07.jpg','img/photo_08.jpg','img/photo_09.jpg','img/photo_10.jpg','img/photo_11.jpg','img/photo_12.jpg','img/photo_13.jpg','img/photo_14.jpg'];
+const grid=document.getElementById('galleryGrid');
+imgs.forEach((src,i)=>{const d=document.createElement('div');d.className='g-item';d.innerHTML=`<img src="${src}" alt="Alan Gutiérrez tattoo ${i+1}" loading="lazy" onclick="openLB(${i})">`;grid.appendChild(d);});
+let cur=0;
+function openLB(i){cur=i;document.getElementById('lbImg').src=imgs[i];document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
+function lbNav(d){cur=(cur+d+imgs.length)%imgs.length;document.getElementById('lbImg').src=imgs[cur];}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
+function toggleLang(){const b=document.body;if(b.classList.contains('lang-es')){b.classList.replace('lang-es','lang-en');document.documentElement.lang='en';}else{b.classList.replace('lang-en','lang-es');document.documentElement.lang='es';}}
+</script>
 </body>
 </html>
